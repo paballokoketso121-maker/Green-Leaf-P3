@@ -1,0 +1,37 @@
+Changelog
+v1.0.0 – Initial Release (2025-08-27)
+
+    Added homepage (index.html)
+    Created, "About Us","products"."services'."shop now" and "Contact" pages
+    Improved content on *About Us page*
+    Added navigation bar and footer across all pages with © 2025 notice and social media links.
+
+    
+
+v1.1.0 – Latest Update (2025-09-26)
+    Added css for decoration, layout, and typography
+
+    Improved mobile responsiveness
+
+    Integrated Font Awesome icons
+
+    Added responsive CSS styling
+    Added product filtering and search functionality.  
+    Implement a shopping cart system (JavaScript integration).  
+    Optimize images for faster loading.  
+    Add animations and transitions for better user experience.  
+    Deploy site on GitHub Pages / Netlify.
+    *Shop Now page* linking to external store.
+    CSS stylesheet (`style.css`) for consistent styling across all pages.
+    Responsive navigation and layout.
+    *Services page* to outline offerings to customers and businesses.
+    *FAQ page* with collapsible Q&A section using '<details>' and '<summary>'.
+    added../assets/mobile screenshot1.png
+    ../assets/tablet screenshot2.png
+    ../assets/desktop screenshot3.png
+
+    fixed 
+
+    Corrected broken internal links in navigation bar ('about.html', 'contact.html', 'faq.html').
+    Fixed image path inconsistencies ('assets/' capitalization issue).
+   Removed extra closing '</iframe>' tag in Contact page.

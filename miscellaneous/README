@@ -1,0 +1,84 @@
+ Basic CSS styling
+
+
+File & Folder Structure
+
+    Greenleaf-Organic/
+│── index.html          # Homepage  
+│── about.html          # About Us page  
+│── products.html       # Product listings  
+│── services.html       # Services page  
+│── faq.html            # FAQ page  
+│── contact.html        # Contact form page  
+│  
+├── assets/             # Images and media files  
+│     ├── greenleaf-metadata-logo.jpg  
+│     ├── organic-vegetables.png  
+│     ├── FamilyBox.webp  
+│     ├── ...  
+│  
+├── css/  
+│     └── style.css     # Main stylesheet  
+│  
+└── README.md           # Project documentation  
+
+Installation / How to Run
+
+    Download or clone this repository.
+
+    Open the index.html file in any modern browser.
+
+    No server setup is required (static website).
+
+Dependencies
+
+    Font Awesome
+    – for icons
+
+    Google Fonts
+    – for typography
+
+Usage Instructions
+
+    Edit the index.html file to update homepage content.
+
+    Modify css/styles.css to change colors, fonts, or layout.
+
+    Add new pages and link them through the navigation bar.
+
+Author
+
+Paballo
+
+Changelog
+v1.0.0 – Initial Release (2025-08-27)
+
+    Added homepage (index.html)
+
+    Created, "About Us","FAQ","product","services","shop now" and "Contact" pages
+
+    Added navigation bar and footer
+
+    
+
+v1.1.0 – Latest Update (2025-09-26)
+    Added css for decoration, layout, and typography
+
+    Improved mobile responsiveness
+
+    Integrated Font Awesome icons
+
+    Added responsive CSS styling
+    ../assets/mobile screenshot1.png
+    ../assets/tablet screenshot2.png
+    ../assets/desktop screenshot3.png
+
+    REFERENCES
+    W3Schools. (2025, September 13). W3Schools. Retrieved from W3Schools: https://www.w3schools.com/cssref/pr_class_cursor.php
+
+    Schools, W. (2025, September 20). W3 SCHOOLS. Retrieved from W3 SCHOOLS: https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+
+    Paballo, T. (2025, September 23). Miss. (John, Interviewer)
+
+    
+
