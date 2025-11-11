@@ -477,3 +477,15 @@ footer a {
         padding: 40px 20px;
     }
 }
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header, body.dark-mode footer {
+  background-color: #1b1b1b;
+}
+
+body.dark-mode a {
+  color: #a5d6a7;
+}
