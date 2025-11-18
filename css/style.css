@@ -44,14 +44,14 @@
     }
 
     nav a:hover {
-      color: #c8e6c9;
+      color: #a5d6a7;
     }
 
     /* 🌻 Hero Section */
     .hero {
       background: linear-gradient(rgba(46, 125, 50, 0.6), rgba(46, 125, 50, 0.6)),
         url("assets/fresh-organic-bg.jpg") center/cover no-repeat;
-      color: white;
+      color: black;
       text-align: center;
       padding: 120px 20px;
       animation: fadeIn 1.2s ease-in;
@@ -69,7 +69,7 @@
 
     .btn {
       background-color: #1b5e20;
-      color: white;
+      color: black;
       padding: 12px 30px;
       border-radius: 5px;
       font-weight: 600;
@@ -109,7 +109,7 @@
     }
 
     .why-choose h2 {
-      color: #2e7d32;
+      color: black;
       font-size: 2rem;
       margin-bottom: 30px;
     }
@@ -122,7 +122,7 @@
     }
 
     .feature-card {
-      background: white;
+      background : whitesmoke;
       padding: 30px 20px;
       border-radius: 10px;
       width: 270px;
@@ -194,7 +194,7 @@
     /* 🌾 CTA Section */
     .cta {
       background-color: #2e7d32;
-      color: white;
+      color: black;
       text-align: center;
       padding: 70px 20px;
     }
@@ -207,7 +207,7 @@
     /* 🌍 Footer */
     footer {
       background-color: #1b5e20;
-      color: white;
+      color: black;
       text-align: center;
       padding: 25px 10px;
       font-size: 0.9rem;
@@ -220,7 +220,7 @@
     }
 
     footer a:hover {
-      color: white;
+      color: black;
     }
 
     /* ✨ Animations */
@@ -305,8 +305,8 @@ nav a:hover, nav a.active {
    HERO SECTION
 ======================= */
 .hero {
-    background: url('../assets/hero-bg.jpg') center/cover no-repeat;
-    color: white;
+    background: url('../assets/istockphoto-1418167621-612x612.jpg center/cover no-repeat');
+    color: black;
     padding: 100px 20px;
     text-align: center;
 }
@@ -324,7 +324,7 @@ nav a:hover, nav a.active {
 .btn {
     display: inline-block;
     background-color: #2e7d32;
-    color: white;
+    color: black;
     padding: 10px 25px;
     border-radius: 5px;
     font-weight: bold;
@@ -404,18 +404,18 @@ section {
 ======================= */
 .cta {
     background-color: #2e7d32;
-    color: white;
+    color: black;
     text-align: center;
     padding: 60px 20px;
 }
 
 .cta .btn {
-    background-color: white;
+    background-color: black;
     color: #2e7d32;
 }
 
 .cta .btn:hover {
-    background-color: #e0e0e0;
+    background-color: black;
 }
 
 /* =======================
@@ -430,7 +430,7 @@ section {
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
     width: 100%;
     font-size: 1rem;
