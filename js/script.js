@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById("myButton");
     button.addEventListener("click", function() {
         alert("Button was clicked!");
+    });
         // ----------------------
 // 1. Smooth scroll for "Shop Now"  button
 // ----------------------
@@ -15,6 +16,43 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "pages/shop now.html"; // Adjust if path differs
     });
   }
+// ===================
+// PRODUCT SEARCH + FILTER
+// ===================
+
+const searchInput = document.getElementById("productSearch");
+const categoryFilter = document.getElementById("categoryFilter");
+const products = document.querySelectorAll(".product-card");
+const noResults = document.getElementById("noResults");
+
+function filterProducts() {
+    const searchValue = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+    let visibleCount = 0;
+
+    products.forEach(product => {
+        const name = product.querySelector("h3").innerText.toLowerCase();
+        const tags = product.dataset.tags.toLowerCase();
+        const category = product.dataset.category;
+
+        const matchesSearch = name.includes(searchValue) || tags.includes(searchValue);
+        const matchesCategory = selectedCategory === "all" || category === selectedCategory;
+
+        if (matchesSearch && matchesCategory) {
+            product.style.display = "block";
+            visibleCount++;
+        } else {
+            product.style.display = "none";
+        }
+    });
+
+    // Show / hide "no results" text
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+searchInput.addEventListener("keyup", filterProducts);
+categoryFilter.addEventListener("change", filterProducts);
+
 
   // ----------------------
   // 2. Contact Form Validation
@@ -108,5 +146,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
     }
     );
-}
-);
