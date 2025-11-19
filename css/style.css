@@ -11,7 +11,7 @@ Kept dark-mode styles
 Suitable for replacing your existing css/style.css ================================================== */
     body {
       font-family: Arial, sans-serif;
-      padding: 50px;
+      padding: 20px;
     }
     .search-container {
       position: relative;
@@ -21,8 +21,22 @@ Suitable for replacing your existing css/style.css =============================
       width: 100%;
       padding: 10px;
       box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
+    #search-btn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+   border-radius: 4px;
+  }
     .suggestions {
+       list-style: none;
+       margin: 0;
+      padding: 0;
       border: 1px solid #ccc;
       border-top: none;
       max-height: 150px;
@@ -30,17 +44,18 @@ Suitable for replacing your existing css/style.css =============================
       position: absolute;
       width: 100%;
       background-color: #fff;
-      z-index: 10;
+       display: none;
+      z-index: 1000;
     }
-    .suggestions div {
+    .suggestions li {
       padding: 10px;
       cursor: pointer;
     }
-    .suggestions div:hover {
+    .suggestions li:hover {
       background-color: #f0f0f0;
     }
     .no-results {
-      padding: 10px;
+      padding: 20px;
       color: #888;
     }
   

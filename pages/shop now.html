@@ -13,7 +13,9 @@
         <div class="container nav-container">
             <img src="../assets/greenleaf-metadata-logo.jpg" width="150" alt="Greenleaf Logo">
             <!-- Hamburger Toggle -->
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+            <input type="text" id="search-input" placeolder="search for a product " />
+            <button id="search-button">Search</button>
+             <ul id="suggestions-list"></ul>
             <label for="nav-toggle" class="hamburger">
                 <span></span>
                 <span></span>
@@ -29,18 +31,12 @@
                 <a href="services.html">Services</a>
             </nav>
         </div>
+         <div id="results"></div>
     </header>
 
     <!-- Main Section -->
     <main style="max-width:1000px; margin:50px auto; padding:20px;">
-     <!-- 🔍 SEARCH + CATEGORY FILTER -->
-<div class="search-section" style="text-align:center; margin: 30px 0;">
-    <div class="search-filter-section">
-    <!-- SEARCH BAR WITH ICON -->
-      <div class="search-box">
-        <input type="text" id="productSearch" placeholder="Search products...">
-        <span class="search-icon">&#128269;</span>
-    </div>
+     
         <!-- Magnifying icon -->
         <span style="
             position:absolute; 

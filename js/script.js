@@ -2,6 +2,7 @@
 console.log("JavaScript is working!");
 document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById("myButton");
+});
     button.addEventListener("click", function() {
         alert("Button was clicked!");
     });
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ----------------------
 document.addEventListener("DOMContentLoaded", function () {
   const shopBtn = document.getElementById("shopNowBtn");
+});
   if (shopBtn) {
     shopBtn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -19,40 +21,70 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===================
 // PRODUCT SEARCH + FILTER
 // ===================
+// Example product list
+const products = [
+  "fresh vegetables",
+  "organic fruits",
+  "herbal teas",
+  "diary products",
+  "fresh meat",
+  "garden vegetables",
+  "herbal oils",
+  "herbal snacks",
+  "herbal spinach juices",
+  "spicy herbal sauces"
+  
+];
+const searchInput = document.getElementById("Search-input");
+const suggestions = document.getElementById("suggestions");
+const   searchBtn = document.querySelectorAll("search-btn .product-item");
+const Results = document.getElementById("Results");
+// Show suggestions as user types
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  suggestions.innerHTML = '';
+        if (query === '' || name.includes(query)) {
+            suggestions.style.display = "none";
+            return ;
+            const filteredProducts = products.filter(product => product.toLowerCase().includes(query));
 
-const searchInput = document.getElementById("productSearch");
-const categoryFilter = document.getElementById("categoryFilter");
-const products = document.querySelectorAll(".product-card");
-const noResults = document.getElementById("noResults");
-
-function filterProducts() {
-    const searchValue = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
-    let visibleCount = 0;
-
-    products.forEach(product => {
-        const name = product.querySelector("h3").innerText.toLowerCase();
-        const tags = product.dataset.tags.toLowerCase();
-        const category = product.dataset.category;
-
-        const matchesSearch = name.includes(searchValue) || tags.includes(searchValue);
-        const matchesCategory = selectedCategory === "all" || category === selectedCategory;
-
-        if (matchesSearch && matchesCategory) {
-            product.style.display = "block";
-            visibleCount++;
-        } else {
-            product.style.display = "none";
-        }
+  filteredProducts.forEach(product => {
+    const li = document.createElement('li');
+    li.textContent = product;
+    li.addEventListener('click', () => {
+      searchInput.value = product;
+      suggestions.style.display = 'none';
+      displayResults([product]);
     });
+    suggestions.appendChild(li);
+  });
 
-    // Show / hide "no results" text
-    noResults.style.display = visibleCount === 0 ? "block" : "none";
+  suggestions.style.display = filteredProducts.length > 0 ? 'block' : 'none';
+};
+
+// Search button click
+searchBtn.addEventListener('click', () => {
+  const query = searchInput.value.toLowerCase();
+  const filteredProducts = products.filter(product => product.toLowerCase().includes(query));
+  displayResults(filteredProducts);
+});
+
+// Display results
+function displayResults(items) {
+  results.innerHTML = '';
+  if (items.length === 0) {
+    results.textContent = 'No products found.';
+    return;
+  }
+
+  const ul = document.createElement('ul');
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+  results.appendChild(ul);
 }
-
-searchInput.addEventListener("keyup", filterProducts);
-categoryFilter.addEventListener("change", filterProducts);
-
 
   // ----------------------
   // 2. Contact Form Validation
@@ -144,5 +176,4 @@ categoryFilter.addEventListener("change", filterProducts);
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
-    }
-    );
+    
