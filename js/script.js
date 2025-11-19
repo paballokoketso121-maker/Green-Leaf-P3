@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener("click", function() {
         alert("Button was clicked!");
         // ----------------------
-// 1. Smooth scroll for "Shop Now" or "Start Shopping" button
+// 1. Smooth scroll for "Shop Now"  button
 // ----------------------
 document.addEventListener("DOMContentLoaded", function () {
   const shopBtn = document.getElementById("shopNowBtn");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const addCartButtons = document.querySelectorAll(".add-to-cart");
   addCartButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      alert("✅ Item added to your cart successfully!");
+      alert(" Item added to your cart successfully!");
     });
   });
 

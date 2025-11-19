@@ -35,3 +35,67 @@ v1.1.0 – Latest Update (2025-09-26)
     Corrected broken internal links in navigation bar ('about.html', 'contact.html', 'faq.html').
     Fixed image path inconsistencies ('assets/' capitalization issue).
    Removed extra closing '</iframe>' tag in Contact page.
+
+   v1.4 – Final Polished Release
+Date: 2025-11-18
+Status: Stable
+
+Added
+
+Added fully responsive hamburger navigation menu
+Added ARIA accessibility attributes for better usability
+Added updated and modern header structure
+Added improved mobile navigation animation
+Added dark mode styles
+
+Improved
+
+Cleaned and optimized HTML structure (header, nav, hero, sections)
+Updated style.css for consistency and responsive design
+Improved product cards layout
+Improved footer spacing and readability
+Improved container alignment across all pages
+
+ Fixed
+
+Fixed broken image paths
+Fixed navigation inconsistencies
+Fixed padding and spacing issues across all pages
+Fixed missing hover effects and inconsistent colors
+Fixed overlapping layout on mobile devices
+
+v1.3 – UI Improvements
+ Improved
+
+Updated hero banner background and text styling
+Revised spacing for About, Services, and Products sections
+Improved colour palette with consistent theme
+Added animations (fade-in, slide-up)
+
+v1.2 – Content & Structure Update
+ Added
+
+Added new content for FAQ page
+Added updated images for products
+Added expanded About section (mission, values, history)
+
+Improved
+
+Reworked internal page layout
+Improved products grid to support more items
+Enhanced footer with quick links
+
+v1.1 – Initial Styling Update
+Added
+
+Added first version of style.css
+Added base layout and color scheme
+Added responsive grid for products and services
+
+v1.0 – Initial Project Setup
+🚀 Created
+
+Basic HTML pages created (Home, About, Contact, Services,FAQ, Shop Now)
+Basic navigation links
+Placeholder text and images
+Initial file structure (assets/, css/, js/)

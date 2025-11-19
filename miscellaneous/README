@@ -1,3 +1,4 @@
+# Greenleaf Organic Website
  Basic CSS styling
 
 
@@ -71,7 +72,7 @@ v1.1.0 – Latest Update (2025-09-26)
     Added responsive CSS styling
     ../assets/mobile screenshot1.png
     ../assets/tablet screenshot2.png
-    ../assets/desktop screenshot3.png
+    ../assets/desktop screenshot3.png.png
 
     REFERENCES
     W3Schools. (2025, September 13). W3Schools. Retrieved from W3Schools: https://www.w3schools.com/cssref/pr_class_cursor.php
@@ -80,5 +81,64 @@ v1.1.0 – Latest Update (2025-09-26)
 
     Paballo, T. (2025, September 23). Miss. (John, Interviewer)
 
-    
+    Greenleaf Organic is a fictional organic food brand that focuses on healthy living, sustainability, and fresh farm produce.  
+The website includes essential pages such as:
+    Homepage
+    About Us
+    Products
+    Services
+    FAQ
+    Contact Us
+    Shop Now
+ The goal of the project is to present information about the business and allow visitors to browse available products in a clean and user-friendly way.
 
+##  Technologies Used
+
+This project uses the following web development technologies:
+
+- **HTML5** – for page structure  
+- **CSS3** – for styling and responsiveness  
+- **JavaScript** – for interactivity and menu functionality  
+- **GitHub Pages** – for hosting the website  
+- **Images/Assets** – used for product listings and branding  
+
+##  Live Demo
+
+If published on GitHub Pages, the site can be accessed here:
+
+`https://paballokoketso121-maker.github.io/Green-leaf-P3/`
+## 📁 Project Structure
+
+    Greenleaf-Organic/
+│── index.html          # Homepage  
+│── about.html          # About Us page 
+│── products.html       # Product listings  
+│── services.html       # Services page
+│── faq.html            # FAQ page
+│── contact.html        # Contact form page
+│___ shop now.html      # Shop Now page
+│___ css/style.css     # Main stylesheet
+|___ miscellaneous/README.md  # Project documentation
+|___ js/script.js       # JavaScript file
+├── assets/             # Images and media files
+│     ├── greenleaf-metadata-logo.jpg  
+│     ├── organic-vegetables.png
+│     ├── FamilyBox.webp
+
+## ✨ Features
+
+- Fully responsive navigation bar  
+- Hamburger menu for mobile devices  
+- Clean and modern layout  
+- Product grid with pricing  
+- Easy-to-read content and visuals  
+- Consistent branding across all pages  
+- Footer with social media links  
+- User-friendly structure suitable for  portfolios  
+- Dark Mode support
+
+## 📘 How to Use / Run the Project
+
+1. Download or clone the repository:
+   ```bash
+   git clone `https://paballokoketso121-maker.github.io/Green-leaf-P3/`
