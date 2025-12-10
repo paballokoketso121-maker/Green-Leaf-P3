@@ -1,113 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greenleaf Organic | Home</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Greenleaf Organic — Fresh local organic produce</title>
+  <meta name="description" content="Greenleaf Organic — fresh locally sourced organic vegetables, fruits and herbs. Shop seasonal produce and support local farmers." />
+  <meta name="keywords" content="organic produce, fresh vegetables, organic fruits, Greenleaf Organic, local farm produce" />
+  <link rel="canonical" href="https://example.com/index.html" />
+  <meta property="og:title" content="Greenleaf Organic — Fresh local organic produce" />
+  <meta property="og:description" content="Shop seasonal organic fruits, vegetables and herbs sourced from local farms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/index.html" />
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Greenleaf Organic",
+    "image":"https://example.com/images/fresh-tomatoes-organic.jpg",
+    "telephone":"+27-21-555-0123",
+    "address":{"@type":"PostalAddress","streetAddress":"123 Green St","addressLocality":"Johannesburg","addressRegion":"Gauteng","postalCode":"2000","addressCountry":"ZA"},
+    "url":"https://example.com"
+  }
+  </script>
 </head>
-<script src="js/script.js"></script>
 <body>
-  <!-- 🌿 Header -->
-  <header class="header">
-    <div class="container nav-container"></div>
-    <img src="assets/greenleaf-metadata-logo.jpg" alt="Greenleaf Organic Logo" />
-    <!-- Hamburger Toggle -->
-<input type="checkbox" id="nav-toggle" class="nav-toggle" />
-<label for="nav-toggle" class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</label>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./pages/about.html">About</a>
-      <a href="./pages/products.html">Products</a>
-      <a href="./pages/shop now.html">Shop Now</a>
-      <a href="./pages/services.html">Services</a>
-      <a href="./pages/FAQ.html">FAQ</a>
-      <a href="./pages/contact.html">Contact</a>
-    </nav>
+  <!-- Header (consistent across pages) -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a class="logo" href="index.html"><img src="images/greenleaf-logo.png" alt="Greenleaf Organic" width="150"></a>
+      <button id="hamburger" class="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav" class="nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- 🌻 Hero -->
-   <section class="hero">
-    <h1>Welcome to Greenleaf Organic</h1>
-    <img src="./assets/istockphoto-1418167621-612x612.jpg" width="650" alt="Greenleaf Logo">
-    <p>Fresh, Healthy, and 100% Organic Food for a Better Tomorrow</p>
-    
-  <!-- 🌿 About -->
-  <section class="about">
-    <h2>About Greenleaf Organic</h2>
-    <p>
-      At Greenleaf Organic, we believe food should be fresh, nutritious, and grown with care. Our mission is to provide communities with sustainably sourced organic products that support healthy living while protecting the environment. From farm to table, we prioritize quality, transparency, and customer satisfaction.
-    </p>
-    <a href="./pages/about.html" class="btn">Learn More</a>
-  </section>
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Fresh. Local. Organic.</h1>
+      <p class="lead">Seasonal produce from trusted local farms — delivered with care.</p>
+    </section>
 
-  <!-- 🌱 Why Choose Us -->
-  <section class="why-choose">
-    <h2>Why Choose Greenleaf Organic?</h2>
-    <div class="features">
-      <div class="feature-card">
-        <h3>🌾 100% Organic</h3>
-        <p>All our products are grown without harmful pesticides or chemicals.</p>
+    <section aria-labelledby="daily-tip-heading">
+      <h2 id="daily-tip-heading">Daily Tip</h2>
+      <div id="daily-tip" class="card" role="status" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="why-heading">
+      <h2 id="why-heading">Why choose organic?</h2>
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="acc-1" id="accbtn-1">Health benefits</button>
+        <div id="acc-1" class="accordion-content" hidden>
+          <p>Organic produce is grown without synthetic pesticides and supports biodiversity.</p>
+        </div>
+
+        <button class="accordion-btn" aria-expanded="false" aria-controls="acc-2" id="accbtn-2">Supporting communities</button>
+        <div id="acc-2" class="accordion-content" hidden>
+          <p>We partner with small farms to ensure fair prices and sustainable practices.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>🍎 Fresh & Healthy</h3>
-        <p>Seasonal produce delivered fresh to your doorstep.</p>
+    </section>
+
+    <section aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Gallery</h2>
+      <div class="gallery" aria-label="Product gallery">
+        <img class="gallery-img" src="images/fresh-tomatoes-organic.jpg" alt="Fresh organic tomatoes in wooden crate" data-caption="Fresh organic tomatoes" loading="lazy">
+        <img class="gallery-img" src="images/organic-herbs-bunch.jpg" alt="Bunch of organic herbs tied with twine" data-caption="Organic herbs" loading="lazy">
+        <img class="gallery-img" src="images/fresh-fruits-display.jpg" alt="Display of assorted organic fruits" data-caption="Assorted organic fruits" loading="lazy">
       </div>
-      <div class="feature-card">
-        <h3>🌍 Sustainable Farming</h3>
-        <p>Supporting eco-friendly practices that protect the environment.</p>
+    </section>
+
+    <section aria-labelledby="search-heading">
+      <h2 id="search-heading">Search products</h2>
+      <div class="search-wrapper" role="search" aria-label="Search products">
+        <label for="searchInput" class="visually-hidden">Search products</label>
+        <input id="searchInput" name="q" type="search" placeholder="Search product (e.g. tomatoes)" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions">
+        <div id="suggestions" class="suggestions" role="listbox" aria-live="polite"></div>
+        <div id="searchResults" class="search-results" aria-live="polite"></div>
       </div>
+    </section>
+
+    <section aria-labelledby="refs-heading">
+      <h2 id="refs-heading">References</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+        <li><a href="https://www.w3.org/" target="_blank" rel="noopener">W3C</a></li>
+        <li><a href="https://developers.google.com/maps" target="_blank" rel="noopener">Google Maps API docs</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Greenleaf Organic</p>
     </div>
-  </section>
-
-  <!-- 🍉 Featured Products -->
-  <section class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="assets/organic-vegetables.png" alt="Fresh Vegetables" />
-        <h3>Fresh Vegetables</h3>
-        <p>Pesticide-free seasonal farm produce.</p>
-        <p class="price">R112 / basket</p>
-        <a href="./pages/products.html" class="btn">View Products</a>
-      </div>
-      <div class="product-card">
-        <img src="assets/FamilyBox.webp" alt="Organic Fruits" />
-        <h3>Organic Fruits</h3>
-        <p>Juicy, sweet, and naturally grown.</p>
-        <p class="price">R105 / basket</p>
-        <a href="./pages/products.html" class="btn">View Products</a>
-      </div>
-      <div class="product-card">
-        <img src="assets/pure-green-leaf-tea-tearaja-1.webp" alt="Herbal Teas" />
-        <h3>Herbal Teas</h3>
-        <p>Relaxing and soothing organic teas.</p>
-        <p class="price">R112 / box</p>
-        <a href="./pages/products.html" class="btn">View Products</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🌾 CTA -->
-  <section class="cta">
-    <h2>Join the Green Movement</h2>
-    <p>Experience the taste of nature with Greenleaf Organic.</p>
-  <a href="./pages/shop now.html" id="shopNowBtn" class="btn">shop now</a>
-
-  </section>
-
-  <!-- 🌍 Footer -->
-  <footer>
-    <p>&copy; 2025 Greenleaf Organic Food | All Rights Reserved</p>
-    <p>
-      Follow us:
-      <a href="https://www.facebook.com/greenleaforganic">Facebook</a> |
-      <a href="https://www.instagram.com/greenleaforganic">Instagram</a>
-    </p>
   </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-inner">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close image">✕</button>
+      <figure>
+        <img id="lightbox-img" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -1,96 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About Us | Greenleaf Organic</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Learn about Greenleaf Organic: our mission, values, history and locations." />
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<script src="js/script.js"></script>
 <body>
-  <!-- Header -->
-  <header class="header">
+  <header class="site-header" role="banner">
     <div class="container nav-container">
-      <img src="../assets/greenleaf-metadata-logo.jpg" width="150" alt="Greenleaf Logo">
-      <!-- Hamburger Toggle -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-      </label>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="FAQ.html">FAQ</a>
-        <a href="products.html">Products</a>
-        <a href="shop now.html">Shop Now</a>
-        <a href="services.html">Services</a>
-      
+      <a class="logo" href="index.html"><img src="images/greenleaf-logo.png" alt="Greenleaf Organic" width="150"></a>
+      <button id="hamburger-about" class="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav" class="nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="about-intro" style="max-width: 900px; margin: 50px auto; text-align: center;">
+  <main class="container">
+    <section class="about-intro" style="max-width:900px;margin:50px auto;text-align:center;">
       <h1>About Greenleaf Organic</h1>
-      <p>
-        At <strong>Greenleaf Organic</strong>, we believe in nourishing people and protecting the planet. 
-        Our mission is to provide high-quality, pesticide-free, and eco-friendly food products that 
-        promote healthy living and sustainable farming.
-      </p>
+      <p>At <strong>Greenleaf Organic</strong> we believe in nourishing people and protecting the planet. Our mission is to provide high-quality, pesticide-free, eco-friendly food products that promote healthy living and sustainable farming.</p>
     </section>
 
-    <section class="about-values" >
-      <h2>🌍 Our Values</h2>
+    <section class="about-values" style="max-width:900px;margin:0 auto;">
+      <h2>Our Values</h2>
       <ul>
         <li><strong>Sustainability:</strong> Supporting eco-friendly farming practices.</li>
-        <li><strong>Health:</strong> Providing natural, chemical-free, and nutrient-rich products.</li>
+        <li><strong>Health:</strong> Providing natural, chemical-free, nutrient-rich products.</li>
         <li><strong>Community:</strong> Building strong relationships with local farmers.</li>
-        <li><strong>Transparency:</strong> Ensuring honesty in everything we produce and sell.</li>
+        <li><strong>Transparency:</strong> Honesty about our products and practices.</li>
       </ul>
     </section>
 
-    <section class="about-history" style="max-width: 900px; margin: 50px auto;">
-      <h2>📖 Our Story</h2>
-      <p>
-        Founded in 2015 in Johannesburg, Greenleaf Organic began as a small family-run business 
-        selling fresh produce at local farmers’ markets. Over the years, we have grown into a trusted 
-        supplier of organic products, expanding our range to include vegetables, fruits, grains, dairy, 
-        and healthy snacks.
-      </p>
+    <section class="about-history" style="max-width:900px;margin:50px auto;">
+      <h2>Our Story</h2>
+      <p>Founded in 2015 in Johannesburg, Greenleaf Organic began as a small family-run stall at farmers’ markets. Today we supply a wide range of organic produce, dairy alternatives, and healthy snacks, partnering with farms across South Africa.</p>
     </section>
 
-    <section class="about-mission" >
-      <h2>🌱 Our Mission in Practice</h2>
-      <p>
-        Every product we sell reflects our commitment to quality and sustainability. From partnering 
-        with local farmers to delivering fresh produce directly to your home, we ensure that healthy 
-        living is accessible, convenient, and environmentally friendly.
-      </p>
+    <section class="about-mission" style="max-width:900px;margin:0 auto;">
+      <h2>Our Mission in Practice</h2>
+      <p>From supporting regenerative farming to ensuring fair pay for producers, every product we sell reflects our commitment to quality and sustainability.</p>
     </section>
 
-    <section class="about-location" style="max-width: 900px; margin: 50px auto; text-align: center;">
-      <h2>📍 Where We Are</h2>
-      <p>
-        Our main farm and operations are located in <strong>Johannesburg</strong>, with partnerships across 
-        the Western Cape and KwaZulu-Natal. You can find us in selected stores, farmers’ markets, and 
-        through our online shop.
-      </p>
-      <img src="../assets/Organic-Zone-1-768x585.webp" alt="Greenleaf Farm" width="500" >
+    <section class="about-location" style="max-width:900px;margin:50px auto;text-align:center;">
+      <h2>Where We Are</h2>
+      <p>Head office and main farm operation: <strong>Johannesburg</strong>. We also work with partner farms across the Western Cape and KwaZulu-Natal.</p>
+      <img src="images/organic-vegetables.png" alt="Greenleaf farm and produce" width="500">
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer >
-    <p>&copy; 2025 Greenleaf Organic Food | All Rights Reserved</p>
-    <p>Follow us: 
-      <a href="https://www.facebook.com/greenleaforganic" target="_blank" >Facebook</a> | 
-      <a href="https://www.instagram.com/greenleaforganic" target="_blank" >Instagram</a>
-    </p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year2"></span> Greenleaf Organic</p>
+    </div>
   </footer>
-  <script src="js/script.js"></script>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

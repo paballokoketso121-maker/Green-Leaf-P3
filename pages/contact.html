@@ -1,90 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Greenleaf Organic</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<script src="js/script.js"></script>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container nav-container">
-            <img src="../assets/greenleaf-metadata-logo.jpg" width="150" alt="Greenleaf Logo">
-            <!-- Hamburger Toggle -->
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" /> 
-            <label for="nav-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html" class="active">Contact Us</a>
-                <a href="faq.html">FAQ</a>
-                <a href="products.html">Products</a>
-                <a href="shop now.html">Shop Now</a>
-                <a href="services.html">Services</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Main Section -->
-    <main style="max-width:900px; margin:50px auto; padding:20px; text-align:center;">
-        <h1>Contact Greenleaf Organic</h1>
-        <p>
-            We’d love to hear from you! Whether you have questions about our products, 
-            services, or bulk orders, feel free to reach out.
-        </p>
+:root{
+  --container:1100px;
+  --accent:#2b7a2b;
+  --muted:#666;
+  --radius:8px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 
-        <!-- Contact Info -->
-        <section class="contact-info" style="margin: 40px 0;">
-            <p><strong>📍 Address:</strong> 123 Green Street, Organic Valley, Cape Town</p>
-            <p><strong>📞 Phone:</strong> +27 81 376 2221</p>
-            <p><strong>📧 Email:</strong> support@greenleaforganic.com</p>
-        </section>
+/* Reset + layout */
+{box-sizing:border-box}
+html,body{height:100%}
+body
+{
+    margin:0;
+    color:#222;
+    background:#fff;
+    line-height:1.45;
+    font-size:16px}
+container
+{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:1rem
+}
 
-        <!-- Contact Form -->
-        <section class="contact-form" style="margin:50px auto;">
-            <h2>Send Us a Message</h2>
-            <form action="./contact.html" method="post">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+/* Header */
+site-header
+{background:#fff;border-bottom:1px solid #eee}
+nav-container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem}
+logo img{display:block}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.75rem;align-items:center}
+nav a{text-decoration:none;color:#333;padding:0.25rem 0.5rem}
+hamburger
+{
+    display:none;
+    background:none;
+    border:0;
+    font-size:1.4rem;
+    cursor:pointer
+}
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+/* Hero */
+hero
+{
+    padding:2rem 0;
+text-align:center
+}
+lead{color:var(--muted)}
 
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+/* Cards */
+card
+{
+    background:#f9f9f9;
+    padding:1rem;
+    border-radius:var(--radius);
+    border:1px solid #f0f0f0
+}
 
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
+/* Gallery */
+gallery
+{
+    display:flex;
+    gap:0.5rem;
+    flex-wrap:wrap
+}
+gallery-img
+{
+    width:220px;
+    height:140px;
+    object-fit:cover;
+    border-radius:6px;
+    cursor:pointer;
+    border:1px solid #eee;
+    transition:transform .15s
+}
+gallery-img:hover{transform:scale(1.02)}
 
-        <!-- Map Section -->
-        <section class="map" style="margin:50px 0;">
-            <h2>Find Us Here</h2>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.40736980438!2d18.4233!3d-33.918861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU1JzA4LjAiUyAxOMKwMjUnMjMuOSJF!5e0!3m2!1sen!2sza!4v1616161616161"
-                width="100%" 
-                height="300" 
-                style="border:0; border-radius:8px;"
-                 allowfullscreen=""
-                  loading="lazy"
-                title="Greenleaf Organic Location">
-            </iframe>
-        </section>
-    </main>
+/* Lightbox */
+.lightbox
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.85);
+    z-index:999
+}
+lightbox-inner{
+    position:relative;
+    max-width:92%;
+    max-height:92%
+}
+lightbox img{
+    max-width:100%;
+    max-height:80vh;
+    border-radius:6px
+}
+lightbox-close{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:#fff;
+    border-radius:50%;
+    border:0;
+    padding:0.25rem 0.5rem;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.2)
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Greenleaf Organic Food | All Rights Reserved</p>
-        <p>Follow us: 
-            <a href="https://www.facebook.com/greenleaforganic" target="_blank" >Facebook</a> | 
-            <a href="https://www.instagram.com/greenleaforganic" target="_blank">Instagram</a>
-        </p>
-    </footer>
+/* Accordion */
+.accordion{margin-top:0.5rem}
+.accordion-btn{display:block;width:100%;text-align:left;padding:0.75rem;border:1px solid #ddd;background:#fff;cursor:pointer;border-radius:6px;margin-top:0.5rem}
+.accordion-content{padding:0.75rem;border-left:3px solid var(--accent);margin-bottom:0.5rem}
+
+/* Search */
+.search-wrapper{max-width:520px}
+#searchInput{width:100%;padding:0.6rem;border-radius:6px;border:1px solid #ccc}
+.suggestions{background:#fff;border:1px solid #ddd;padding:0.5rem;margin-top:0.25rem;border-radius:6px}
+.suggestions ul{list-style:none;margin:0;padding:0}
+.suggestions li{padding:0.35rem 0.25rem;cursor:pointer}
+.suggestions li:focus, .suggestions li:hover{outline:1px dashed var(--accent);background:#f6fff6}
+
+/* Tabs */
+.tabs{display:flex;gap:0.5rem;margin-bottom:1rem}
+.tabs button[role="tab"]{padding:0.5rem 0.75rem;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer}
+
+/* Product grid */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.product-card{background:#fff;border:1px solid #eee;border-radius:8px;padding:0.75rem;text-align:center}
+.product-card img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+.price{font-weight:600;color:#111;margin:0.5rem 0}
+
+/* Buttons & footer */
+.btn{background:var(--accent);color:#fff;border:0;padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer}
+.site-footer{padding:1rem 0;border-top:1px solid #eee;margin-top:2rem;text-align:center;color:var(--muted)}
+
+/* Form */
+label{display:block;margin-top:0.75rem}
+input[type="text"], input[type="email"], input[type="search"], textarea{width:100%;padding:0.6rem;border-radius:6px;border:1px solid #ccc}
+.form-status{margin-top:0.5rem;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .nav ul{display:none}
+  .hamburger{display:inline-block}
+  .nav.open ul{display:flex;flex-direction:column;background:#fff;padding:0.5rem;border-radius:8px;position:absolute;top:64px;right:16px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+  .product-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+}
+        <h3>Extra Virgin Olive Oil</h3>
+        <p>Rich, flavorful organic olive oil.</p>
+        <p class="price">R150 / bottle</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year6"></span> Greenleaf Organic</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
