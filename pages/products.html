@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Greenleaf Organic</title>
+  <meta name="description" content="Browse Greenleaf Organic's full product range — vegetables, fruits, dairy alternatives, snacks and more." />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a class="logo" href="index.html"><img src="images/greenleaf-logo.png" alt="Greenleaf Organic" width="150"></a>
+      <button id="hamburger-products" class="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav" class="nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align:center;">Our Products</h1>
+    <p style="text-align:center;max-width:900px;margin:0 auto 40px;">We offer a variety of organic products sourced from trusted local farms.</p>
+
+    <section class="product-grid" aria-label="Product list">
+      <article class="product-card" data-category="vegetables" data-tags="vegetables fresh organic">
+        <img src="images/organic-vegetables.png" alt="Fresh vegetables basket">
+        <h3>Fresh Vegetables</h3>
+        <p>Pesticide-free seasonal produce.</p>
+        <p class="price">R112 / basket</p>
+      </article>
+
+      <article class="product-card" data-category="fruits" data-tags="fruits organic">
+        <img src="images/FamilyBox.webp" alt="Box of organic fruits">
+        <h3>Organic Fruits</h3>
+        <p>Juicy, sweet, naturally grown.</p>
+        <p class="price">R105 / basket</p>
+      </article>
+
+      <article class="product-card" data-category="tea" data-tags="tea herbal organic">
+        <img src="images/pure-green-leaf-tea-tearaja-1.webp" alt="Pure green leaf tea">
+        <h3>Herbal Teas</h3>
+        <p>Relaxing, soothing organic teas.</p>
+        <p class="price">R112 / box</p>
+      </article>
+
+      <article class="product-card" data-category="dairy" data-tags="dairy organic">
+        <img src="images/CalonWen_Product_OrganicDairyEssentialsBox-1.jpg" alt="Organic dairy essentials box">
+        <h3>Organic Dairy Essentials</h3>
+        <p>Plant-based and organic dairy alternatives.</p>
+        <p class="price">R300 / box</p>
+      </article>
+
+      <article class="product-card" data-category="meat" data-tags="meat fresh">
+        <img src="images/Fresh-Meat.png" alt="Fresh meat pack">
+        <h3>Fresh Meat</h3>
+        <p>Quality cuts — responsibly sourced.</p>
+        <p class="price">R550 / pack</p>
+      </article>
+
+      <article class="product-card" data-category="oils" data-tags="oil herbal organic">
+        <img src="images/Greenleaf-EVOO-open-top-2.png" alt="Extra virgin olive oil">
+        <h3>Herbal Oils</h3>
+        <p>Cold-pressed and aromatic.</p>
+        <p class="price">R1050 / bottle</p>
+      </article>
+
+      <!-- add more product-cards as needed -->
+    </section>
+
+    <section style="text-align:center;margin-top:40px;">
+      <a href="shop.html" class="btn">Shop All Products</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year5"></span> Greenleaf Organic</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

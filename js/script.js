@@ -1,179 +1,179 @@
-//ADD JAVASCRIPT HERE
-console.log("JavaScript is working!");
-document.addEventListener("DOMContentLoaded", function() {
-    const button = document.getElementById("myButton");
-});
-    button.addEventListener("click", function() {
-        alert("Button was clicked!");
-    });
-        // ----------------------
-// 1. Smooth scroll for "Shop Now"  button
-// ----------------------
-document.addEventListener("DOMContentLoaded", function () {
-  const shopBtn = document.getElementById("shopNowBtn");
-});
-  if (shopBtn) {
-    shopBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = "pages/shop now.html"; // Adjust if path differs
-    });
-  }
-// ===================
-// PRODUCT SEARCH + FILTER
-// ===================
-// Example product list
-const products = [
-  "fresh vegetables",
-  "organic fruits",
-  "herbal teas",
-  "diary products",
-  "fresh meat",
-  "garden vegetables",
-  "herbal oils",
-  "herbal snacks",
-  "herbal spinach juices",
-  "spicy herbal sauces"
-  
-];
-const searchInput = document.getElementById("Search-input");
-const suggestions = document.getElementById("suggestions");
-const   searchBtn = document.querySelectorAll("search-btn .product-item");
-const Results = document.getElementById("Results");
-// Show suggestions as user types
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-  suggestions.innerHTML = '';
-        if (query === '' || name.includes(query)) {
-            suggestions.style.display = "none";
-            return ;
-            const filteredProducts = products.filter(product => product.toLowerCase().includes(query));
+/* Main site JS: navigation, accordion, lightbox, search, contact form, simple cart */
+(function () {
+  'use strict';
 
-  filteredProducts.forEach(product => {
-    const li = document.createElement('li');
-    li.textContent = product;
-    li.addEventListener('click', () => {
-      searchInput.value = product;
-      suggestions.style.display = 'none';
-      displayResults([product]);
-    });
-    suggestions.appendChild(li);
-  });
+  // helpers
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
 
-  suggestions.style.display = filteredProducts.length > 0 ? 'block' : 'none';
-};
+  // set years
+  const y = new Date().getFullYear();
+  $('#year') && ($('#year').textContent = y);
+  $('#year2') && ($('#year2').textContent = y);
+  $('#year3') && ($('#year3').textContent = y);
+  $('#year4') && ($('#year4').textContent = y);
+  $('#year5') && ($('#year5').textContent = y);
+  $('#year6') && ($('#year6').textContent = y);
+  $('#year7') && ($('#year7').textContent = y);
+  $('#year8') && ($('#year8').textContent = y);
 
-// Search button click
-searchBtn.addEventListener('click', () => {
-  const query = searchInput.value.toLowerCase();
-  const filteredProducts = products.filter(product => product.toLowerCase().includes(query));
-  displayResults(filteredProducts);
-});
-
-// Display results
-function displayResults(items) {
-  results.innerHTML = '';
-  if (items.length === 0) {
-    results.textContent = 'No products found.';
-    return;
-  }
-
-  const ul = document.createElement('ul');
-  items.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    ul.appendChild(li);
-  });
-  results.appendChild(ul);
-}
-
-  // ----------------------
-  // 2. Contact Form Validation
-  // ----------------------
-  const contactForm = document.querySelector(".contact-form form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      if (!name || !email || !message) {
-        alert("Please fill in all fields before submitting.");
-        e.preventDefault();
-      } else if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
-        alert("Please enter a valid email address.");
-        e.preventDefault();
-      } else {
-        alert("Thank you for contacting Greenleaf Organic! 🌿");
-      }
-    });
-  }
-
-  // ----------------------
-  // 3. "Add to Cart" Button Popup
-  // ----------------------
-  const addCartButtons = document.querySelectorAll(".add-to-cart");
-  addCartButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      alert(" Item added to your cart successfully!");
+  // Hamburger toggles
+  $$('.hamburger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nav = document.getElementById('main-nav');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (nav) nav.classList.toggle('open');
     });
   });
 
-  // ----------------------
-  // 4. Light/Dark Mode Toggle
-  // ----------------------
-  const modeToggle = document.createElement("button");
-  modeToggle.textContent = "🌓 Toggle Theme";
-  modeToggle.id = "themeToggle";
-  modeToggle.style.position = "fixed";
-  modeToggle.style.bottom = "20px";
-  modeToggle.style.right = "20px";
-  modeToggle.style.padding = "10px 15px";
-  modeToggle.style.border = "none";
-  modeToggle.style.borderRadius = "8px";
-  modeToggle.style.background = "#3a7d44";
-  modeToggle.style.color = "#fff";
-  modeToggle.style.cursor = "pointer";
-  document.body.appendChild(modeToggle);
-
-  modeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
-
-  // Apply saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
+  // Daily tip
+  const dailyTipEl = document.getElementById('daily-tip');
+  if (dailyTipEl) {
+    const tips = [
+      "Buy seasonal produce — better taste and price.",
+      "Store herbs wrapped in a damp paper towel to keep them fresh longer.",
+      "Rinse root vegetables only when you're ready to use them to extend shelf life.",
+      "Swap one processed snack for fresh fruit this week."
+    ];
+    dailyTipEl.textContent = tips[Math.floor(Math.random() * tips.length)];
   }
 
-  // ----------------------
-  // 5. Back to Top Button
-  // ----------------------
-  const backToTop = document.createElement("button");
-  backToTop.textContent = "⬆ Back to Top";
-  backToTop.id = "backToTop";
-  backToTop.style.position = "fixed";
-  backToTop.style.bottom = "70px";
-  backToTop.style.right = "20px";
-  backToTop.style.padding = "10px 15px";
-  backToTop.style.border = "none";
-  backToTop.style.borderRadius = "8px";
-  backToTop.style.background = "#3a7d44";
-  backToTop.style.color = "#fff";
-  backToTop.style.cursor = "pointer";
-  backToTop.style.display = "none";
-  document.body.appendChild(backToTop);
+  // Accordion
+  $$('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(id);
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (panel) panel.hidden = expanded;
+    });
+  });
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbClose = document.getElementById('lightbox-close');
+
+  $$('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      lbCaption.textContent = img.dataset.caption || '';
+      lightbox.hidden = false;
+      lightbox.setAttribute('aria-hidden', 'false');
+      lbClose.focus();
+    });
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') img.click();
+    });
+  });
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  }
+  lbClose && lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
+  });
+
+  // Search + suggestions
+  (function initSearch() {
+    const products = [
+      "Tomatoes","Spinach","Cucumber","Apples","Herbs","Potatoes","Carrots","Lettuce","Bananas","Peppers"
+    ];
+    const input = document.getElementById('searchInput');
+    const suggestions = document.getElementById('suggestions');
+    const results = document.getElementById('searchResults');
+    if (!input) return;
+
+    function renderSuggestions(list) {
+      suggestions.innerHTML = '';
+      if (!list.length) return;
+      const ul = document.createElement('ul');
+      list.slice(0,6).forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        li.tabIndex = 0;
+        li.addEventListener('click', () => { input.value = item; doSearch(item); suggestions.innerHTML = ''; });
+        li.addEventListener('keydown', (e) => { if (e.key === 'Enter') li.click(); });
+        ul.appendChild(li);
+      });
+      suggestions.appendChild(ul);
     }
+
+    function doSearch(q) {
+      const term = (q || input.value || '').toString().trim().toLowerCase();
+      if (!term) {
+        results.innerHTML = '<p>Please enter a search term.</p>';
+        return;
+      }
+      const matched = products.filter(p => p.toLowerCase().includes(term));
+      if (!matched.length) results.innerHTML = '<p>No results found.</p>';
+      else results.innerHTML = matched.map(m => `<div class="card">${m}</div>`).join('');
+    }
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) { suggestions.innerHTML = ''; results && (results.innerHTML = ''); return; }
+      const matched = products.filter(p => p.toLowerCase().includes(q));
+      renderSuggestions(matched);
+    });
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
+  })();
+
+  // Tabs (if any)
+  $$( '[role="tab"]' ).forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$( '[role="tab"]' ).forEach(b => b.setAttribute('aria-selected','false'));
+      btn.setAttribute('aria-selected','true');
+      $$( '[role="tabpanel"]' ).forEach(p => p.hidden = true);
+      const id = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(id);
+      if (panel) panel.hidden = false;
+    });
   });
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // Contact form submit via fetch with client validation
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    const statusEl = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusEl.textContent = '';
+      const fd = new FormData(contactForm);
+      const name = (fd.get('name') || '').toString().trim();
+      const email = (fd.get('email') || '').toString().trim();
+      const message = (fd.get('message') || '').toString().trim();
+      if (!name || !email || !message) {
+        statusEl.textContent = 'Please fill in all required fields.';
+        return;
+      }
+      const emailRE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRE.test(email)) { statusEl.textContent = 'Please enter a valid email address.'; return; }
+
+      statusEl.textContent = 'Sending...';
+      fetch(contactForm.action, { method: 'POST', body: fd })
+        .then(res => res.text())
+        .then(txt => { statusEl.textContent = txt || 'Message sent successfully!'; contactForm.reset(); })
+        .catch(err => { console.error(err); statusEl.textContent = 'There was an error sending your message.'; });
+    });
+  }
+
+  // Add-to-cart quick visual feedback
+  $$('.add-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const label = btn.dataset.product || 'Item';
+      btn.textContent = 'Added ✓';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = 'Add to cart'; btn.disabled = false; }, 1200);
+      // TODO: integrate real cart / storage
+    });
   });
-});
-    
+
+})();

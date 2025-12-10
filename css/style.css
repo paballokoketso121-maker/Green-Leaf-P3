@@ -1,563 +1,285 @@
-/* ================================================== style.css — Greenleaf Organic Cleaned, merged and improved stylesheet
 
-Unified variables and typography
+:root{
+  --container:1100px;
+  --accent:#2b7a2b;
+  --muted:#666;
+  --radius:8px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 
-Fixed duplicate rules and syntax errors
-
-Added responsive hamburger navigation
-
-Kept dark-mode styles
-
-Suitable for replacing your existing css/style.css ================================================== */
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .search-container {
-      position: relative;
-      width: 300px;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    #search-btn {
-  padding: 10px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-   border-radius: 4px;
-  }
-    .suggestions {
-       list-style: none;
-       margin: 0;
-      padding: 0;
-      border: 1px solid #ccc;
-      border-top: none;
-      max-height: 150px;
-      overflow-y: auto;
-      position: absolute;
-      width: 100%;
-      background-color: #fff;
-       display: none;
-      z-index: 1000;
-    }
-    .suggestions li {
-      padding: 10px;
-      cursor: pointer;
-    }
-    .suggestions li:hover {
-      background-color: #f0f0f0;
-    }
-    .no-results {
-      padding: 20px;
-      color: #888;
-    }
-  
-:root
-{ 
-  --green-900: #1b5e20; 
-  --green-700: #2e7d32;
-   --green-300:  #a5d6a7;
-    --bg: #f9fdf8;
-     --card-bg: #ffffff;
-      --muted: #444;
-       --accent: #388e3c; 
-       --shadow: rgba(0,0,0,0.12); }
-
-/* ------------------ Reset / Base ------------------ */ 
-*{box-sizing:
-   border-box;margin:0;padding:0}
-    html,body{height:100%} 
-    body
-    {
-       font-family: 'Poppins', system-ui, 
-      -apple-system, 'Segoe UI', 
-      Roboto, 'Helvetica Neue', Arial, sans-serif; 
-      background:var(--bg); 
-      color:var(--muted); 
-      line-height:1.6; 
-      -webkit-font-smoothing:antialiased;
-       -moz-osx-font-smoothing:grayscale;
-        overflow-x:hidden; 
-      }
-       a{
-        color:inherit;
-        text-decoration:none
-      } 
-      container{
-        width:90%;
-        max-width:1200px;
-        margin:0 auto
-      } 
-      img{max-width:100%;display:block}
-
-/* ------------------ Utilities ------------------ */ 
-text-center
-{text-align:center} 
-  .mb-2{
-  margin-top:1rem
-} 
-.mt-2{
-  margin-bottom:1rem
-} 
-btn{ display:inline-block;
-  padding:10px 22px;
-  border-radius:6px;
-  font-weight:600;
-  cursor:pointer; 
-  background:var(--green-900);
-  color:#fff;
-  border:0;
-  transition:transform .18s ease,background .18s ease;
- } 
- btn:hover
- {
-  transform:translateY(-3px);
-  background:var(--green-700)
-} 
-  card{background:var(--card-bg);
-    border-radius:10px;
-    box-shadow:0 6px 18px var(--shadow);
-    padding:16px}
-
-/* ------------------ Header & Nav ------------------ */
- header
- {
-   background:var(--green-700);
-   position:sticky;
-   top:0;
-   z-index:120;
-   box-shadow:0 2px 8px rgba(0,0,0,0.12);
-   } 
-   header 
-   container
-   {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:12px 0
-  } 
-  logo{
-    display:flex;
-    align-items:center;
-    gap:12px
-  } logo 
-  img{
-    height:56px;
-    width:auto
-  }
-
-/* Desktop nav */ 
-nav-desktop
+/* Reset + layout */
+  box-sizing:border-box
+html,body{height:100%}
+body
 {
+    margin:0;
+    color:#222;
+    background:#fff;
+    line-height:1.45;
+    font-size:16px}
+container
+{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:1rem
+}
+
+/* Header */
+site-header
+{
+  background:#fff;
+  border-bottom:1px solid #eee
+}
+nav-container{
   display:flex;
-  gap:14px;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.75rem
+}
+logo img{display:block}
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:0.75rem;
   align-items:center
-} 
-nav-desktop a{
-  color:#fff;
-  padding:8px 12px;
-  border-radius:6px;
-  font-weight:500;
-  transition:background .18s} 
-  nav-desktop a:hover, 
-  nav-desktop a.active
-  {
-    background:rgba(0,0,0,0.12)
-  }
+}
+nav a{
+  text-decoration:none;
+  color:#333;
+  padding:0.25rem 0.5rem
+}
+hamburger
+{
+    display:none;
+    background:none;
+    border:0;
+    font-size:1.4rem;
+    cursor:pointer
+}
 
-/* Hamburger (mobile) */ 
-nav-toggle
+/* Hero */
+hero
 {
-  display:none
-} 
-nav-toggle-label
+    padding:2rem 0;
+text-align:center
+}
+lead{color:var(--muted)}
+
+/* Cards */
+card
 {
-  display:none;
+    background:#f9f9f9;
+    padding:1rem;
+    border-radius:var(--radius);
+    border:1px solid #f0f0f0
+}
+
+/* Gallery */
+gallery
+{
+    display:flex;
+    gap:0.5rem;
+    flex-wrap:wrap
+}
+gallery-img
+{
+    width:220px;
+    height:140px;
+    object-fit:cover;
+    border-radius:6px;
+    cursor:pointer;
+    border:1px solid #eee;
+    transition:transform .15s
+}
+gallery-img:hover{transform:scale(1.02)}
+
+/* Lightbox */
+.lightbox
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.85);
+    z-index:999
+}
+lightbox-inner{
+    position:relative;
+    max-width:92%;
+    max-height:92%
+}
+lightbox img{
+    max-width:100%;
+    max-height:80vh;
+    border-radius:6px
+}
+lightbox-close{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:#fff;
+    border-radius:50%;
+    border:0;
+    padding:0.25rem 0.5rem;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.2)
+}
+
+/* Accordion */
+accordion{
+  margin-top:0.5rem
+}
+accordion-btn{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:0.75rem;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  border-radius:6px;
+  margin-top:0.5rem
+}
+accordion-content{
+  padding:0.75rem;
+  border-left:3px solid var(--accent);
+  margin-bottom:0.5rem
+}
+
+/* Search */
+search-wrapper{
+  max-width:520px
+}
+searchInput{
+  width:100%;
+  padding:0.6rem;
+  border-radius:6px;
+  border:1px solid #ccc
+}
+suggestions{
+  background:#fff;
+  border:1px solid #ddd;
+  padding:0.5rem;
+  margin-top:0.25rem;
+  border-radius:6px
+}
+suggestions ul{
+  list-style:none;
+  margin:0;padding:0
+}
+suggestions li{
+  padding:0.35rem 0.25rem;
+  cursor:pointer
+}
+suggestions li:focus, 
+suggestions li:hover
+{
+  outline:1px dashed var(--accent);
+  background:#f6fff6
+}
+
+/* Tabs */
+tabs{
+  display:flex;
+  gap:0.5rem;
+  margin-bottom:1rem
+}
+tabs button[role="tab"]
+{
+  padding:0.5rem 0.75rem;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:6px;
   cursor:pointer
 }
 
-/* Mobile nav menu (hidden by default) */ 
-nav-mobile
-{
-  display:none
+/* Product grid */
+product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem
 }
-
-/* ------------------ Hero ------------------ */ 
-  hero{ text-align:center;
-  padding:80px 20px;
-  background-image:linear-gradient(rgba(46,125,50,.55),rgba(46,125,50,.55)),url('../assets/fresh-organic-bg.jpg');
-   background-size:cover;
-   background-position:center;
-   color:#fff } 
-   hero h1{font-size:2.6rem;
-   margin-bottom:.6rem} 
-   hero p{font-size:1.05rem;
-   max-width:900px;
-   margin:0 auto 1.2rem;
-   color:rgba(255,255,255,0.95)}
-
-/* ------------------ Sections ------------------ */ 
-section{padding:60px 20px} about, 
-why-choose,
- products{max-width:1100px;margin:0 auto} 
- about h2, .products h2, 
- why-choose h2{color:var(--green-700)  ;
-  font-size:1.6rem;
-  margin-bottom:12px} 
-  about p{color:var(--muted);
-  margin-bottom:1rem}
-
-/* Features */ 
-features
-{
-  display:flex;
-  flex-wrap:wrap;
-  gap:24px;
-  justify-content:center
-} 
-feature-card
-{
-  width:260px;
-  background:#fbfbfb;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .18s
-} 
-feature-card:hover
-{
-  transform:translateY(-6px)
-} 
-feature-card h3
-{
-  color:var(--green-700);
-  margin-bottom:.5rem
-}
-
-/* Product grid */ 
-product-grid
-{
-  display:flex;
-  flex-wrap:wrap;
-  gap:22px;
-  justify-content:center
-} 
-product-card
-{
-  width:280px;
-  border-radius:10px;
-  overflow:hidden;
-  background:var(--card-bg);
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-  transition:transform .18s
-} 
-product-card:hover 
-{
-  transform:translateY(-8px)
-}
-
-  product-card img
-  {
-    height:200px;
-    object-fit:cover
-  } 
-  product-card 
-  card-body
-  {
-    padding:14px
-  } 
-  product-card h3
-  {
-    color:var(--green-700);
-    margin:8px 0
-  } 
-  product-card p
-  {
-    color:#555
-  } 
-  product-card 
-  price
-  {
-    color:var(--accent);
-    font-weight:700;
-    margin:8px 0
-  } .product-card 
-  btn
-  {
-    width:100%
-  }
-
-/* CTA */ 
-cta
-{
-  background:var(--green-700);
-  color:#fff;
-  padding:60px 20px;
-  text-align:center
-} 
-cta h2
-{
-  font-size:1.6rem;
-  margin-bottom:.6rem
-}
-
-/* Contact form */ 
-contact-form form
-{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:700px;
-  margin:0 auto
-} 
-contact-form input,
-contact-form textarea
-{
-  padding:12px;
-  border:1px solid #ddd;
+product-card{
+  background:#fff;
+  border:1px solid #eee;
   border-radius:8px;
-  font-size:1rem
-} 
-contact-form button
-{
-  width:160px;
-  align-self:center
-}
-
-/* Footer */ 
-footer
-{
-  background:var(--green-900);
-  color:#fff;
-  padding:20px 10px;
+  padding:0.75rem;
   text-align:center
-} 
-footer a
-{
-  color:var(--green-300);
-  margin:0 6px
 }
-
-/* ------------------ Responsive layout & Hamburger styles ------------------ */
- @media (max-width: 900px)
- { 
-  header 
-  container{padding:8px 0} 
-  nav-desktop{display:none} 
-  nav-toggle{display:block} 
-  nav-toggle-label
-  {
-    display:flex;
-    align-items:center;
-    gap:8px;
-    color:#fff;
-    padding:8px 10px
-  } 
-  nav-toggle-label 
-  hamburger
-  {
-    width:28px;
-    height:2px;
-    background:#fff;
-    position:relative;
-    display:inline-block
-  } 
-  nav-toggle-label 
-  hamburger::before, 
-  nav-toggle-label 
-  hamburger::after
-  {
-    content:'';
-    position:absolute;
-    left:0;
-    width:100%;
-    height:2px;
-    background:#fff
-  } 
-  nav-toggle-label 
-  hamburger::before
-  {
-    top:-8px
-  } 
-  nav-toggle-label 
-  hamburger::after
-  {
-    top:8px
-  }
-
-nav-mobile
+product-card img
 {
-  display:none;
-  position:absolute;
-  left:0;
-  top:64px;
   width:100%;
-  background:var(--green-700);
-  box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  padding:16px
-} 
-nav-mobile a
-{
-  display:block;
-  padding:12px 16px;
+  height:160px;
+  object-fit:cover;
+  border-radius:6px
+}
+price{
+  font-weight:600;
+  color:#111;
+  margin:0.5rem 0
+}
+
+/* Buttons & footer */
+btn{
+  background:var(--accent);
   color:#fff;
+  border:0;
+  padding:0.5rem 0.75rem;
   border-radius:6px;
-  margin-bottom:6px
+  cursor:pointer
+}
+site-footer{
+  padding:1rem 0;
+  border-top:1px solid #eee;
+  margin-top:2rem;
+  text-align:center;
+  color:var(--muted)
 }
 
-/* Toggle behavior using checkbox trick */ 
-nav-toggle
-{
-  position:absolute;
-  left:-9999px
-} 
-nav-toggle:checked ~ 
-nav-toggle-label 
-hamburger
-{
-  background:transparent
-} 
-nav-toggle:checked ~ 
-nav-toggle-label 
-hamburger::before
-{
-  transform:rotate(45deg) translate(5px,5px)
-} 
-nav-toggle:checked ~ 
-nav-toggle-label 
-hamburger::after
-{
-  transform:rotate(-45deg) translate(5px,-5px)
-} 
-nav-toggle:checked ~ 
-nav-mobile
-{
-  display:block
+/* Form */
+label{
+  display:block;
+  margin-top:0.75rem
 }
-
-.product-card{width:90%} }
-
-/* Dark mode */
- body
-dark-mode
-{
-  background:#0f1112;
-  color:#e6e6e6
-}
- body
- dark-mode 
- header, body.dark-mode footer
+input[type="text"], 
+input[type="email"], 
+input[type="search"],
+ textarea
  {
-  background:#0b0b0b
-} body
-dark-mode 
-card
+  width:100%;
+  padding:0.6rem;
+  border-radius:6px;
+  border:1px solid #ccc
+}
+form-status
 {
-  background:#141414;
-  box-shadow:none
-} 
-body
-dark-mode a
-{
-  color:var(--green-300)
-}
-
-/* Small screens */ 
-@media (max-width:480px)
-{ 
-  hero
-  {
-    padding:48px 16px
-  } 
-  hero h1
-  {
-    font-size:1.8rem
-  } 
-  product-card img
-  {
-    height:160px
-  } 
-}
-/* ============================
-   SEARCH + FILTER DESIGN
-============================ */
-
-.search-filter-section {
-    text-align: center;
-    margin: 30px auto;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Search Box */
-.search-box {
-    position: relative;
-    width: 60%;
-    max-width: 400px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 12px 45px 12px 15px;
-    border: 2px solid #2e7d32;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s;
-}
-
-.search-box input:focus {
-    border-color: #1b5e20;
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.4);
-}
-
-/* Magnifying Icon */
-.search-icon {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #2e7d32;
-}
-
-/* Category Dropdown */
-.category-dropdown {
-    padding: 12px;
-    border: 2px solid #2e7d32;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.category-dropdown:focus {
-    border-color: #1b5e20;
-}
-
-/* No results message */
-#noResults {
-    font-size: 1.1rem;
-    animation: fadeIn 0.3s ease;
+  margin-top:0.5rem;
+  color:var(--muted)
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-    .search-box {
-        width: 90%;
-    }
-
-    .category-dropdown {
-        width: 90%;
-    }
-}
-
-
-/* End of stylesheet */
+@media (max-width:800px){
+  nav ul{display:none}
+  hamburger{display:inline-block}
+  nav.open ul{
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    padding:0.5rem;
+    border-radius:8px;
+    position:absolute;
+    top:64px;
+    right:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08)
+  }
+  product-grid
+  {
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr))
+  }}
