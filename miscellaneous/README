@@ -147,3 +147,25 @@ If published on GitHub Pages, the site can be accessed here:
 1. Download or clone the repository:
    ```bash
    git clone `https://paballokoketso121-maker.github.io/Green-leaf-P3/`
+
+  
+Greenleaf Organic — Website
+ What's included
+- `index.html`, `about.html`, `faq.html`, `products.html`, `shop.html`, `services.html`, `contact.html`
+- `css/style.css` — central styles
+- `js/script.js` — interactive behaviors (hamburger, accordion, lightbox, search, contact)
+- `send-email.php` — server-side contact form processor (simple mail())
+- `images/` — image assets; use the filenames listed in the project structure
+
+Deployment checklist
+1. Upload files preserving the folder structure.
+2. Edit `send-email.php`: replace `$to = 'paballokoketso121@gmail.com'` with your real recipient address.
+3. Ensure your host supports PHP for the contact form (or replace with your mail API).
+4. Replace `https://example.com` canonical/og links with your real domain in HTML head tags.
+5. Replace the map placeholder in `contact.html` with a Google Maps iframe if needed.
+6. For production email, use PHPMailer or SMTP (recommended), and add spam protection (CAPTCHA) and rate limiting.
+7. Optimize images (serve WebP or responsive `srcset`) and enable HTTPS.
+Notes & improvements
+- The contact form uses `mail()` for demonstration. For reliable delivery use authenticated SMTP.
+- Add `sitemap.xml` and `robots.txt` for SEO.
+- Consider server-side validation and logging for contact attempts.
